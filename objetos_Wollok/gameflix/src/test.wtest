@@ -1,0 +1,32 @@
+import juegos.*
+
+describe "test de Juegos"{
+	
+	const gta = new Juego(nombre= "GTA", precio= 30, categoria= "tiros")
+	const pes = new Juego(nombre= "PES", precio= 29, categoria= "deporte")
+	
+	test "categoria correcta de juego" {
+		assert.that(pes.esDeCategoria("deporte"))
+	}
+
+	test "categoria incorrecta de juego"{
+		assert.notThat(pes.esDeCategoria("tiros"))
+	}
+
+	test "nombre correcto de juego"{
+		assert.that(pes.tieneNombre("PES"))
+	}
+
+	test "no tiene ese nombre"{
+		assert.notThat(pes.tieneNombre("GTA"))
+	}
+
+	test "juego de precio < 30 es barato"{
+		assert.that(pes.esBarato())
+	}
+	
+	test "juego de precio >= 30 no es barato"{
+		assert.notThat(gta.esBarato())
+	}
+
+}
