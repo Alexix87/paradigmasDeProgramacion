@@ -1,0 +1,1 @@
+class NoPuedeAgregarAsistenteException inherits Exception{}
